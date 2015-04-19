@@ -9,7 +9,6 @@ ssh -t ${USER}@${URL} "rm -rf ${BUILD_FOLDER}"
 ssh -t ${USER}@${URL} "mkdir /home/${USER}/ghost-blog"
 scp -r ./build/ ${USER}@${URL}:${BUILD_FOLDER}
 echo "Building container on server..."
-exit 0
 ssh -t ${USER}@${URL} "cd ${BUILD_FOLDER} && ./build.sh"
 
 exit 0
