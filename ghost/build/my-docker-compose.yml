@@ -1,0 +1,10 @@
+ghost:
+  image: ghost
+  hostname: sb-ghost-blog
+  volumes:
+    - ~/ghost-blog/content/:/var/lib/ghost/
+  restart: always
+  ports:
+    - "80:2368"
+  environment:
+    - NODE_ENV=production
