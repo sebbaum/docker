@@ -1,6 +1,0 @@
-ghost:
-  image: ghost
-  ports: 
-    - 2368:2368 
-  environment:
-    - NODE_ENV=production
