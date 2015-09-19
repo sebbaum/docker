@@ -1,3 +1,4 @@
-keycloak-server.json
-standalone.xml
-/themes
+*/keycloak-server.json
+*/standalone.xml
+*/themes
+*.jks
