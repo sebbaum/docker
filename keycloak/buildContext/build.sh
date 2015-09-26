@@ -6,4 +6,4 @@ CONTAINER_NAME=sb-keycloak
 sudo docker build -t ${IMAGE_NAME} .
 sudo docker kill ${CONTAINER_NAME}
 sudo docker rm ${CONTAINER_NAME}
-sudo docker run --name ${CONTAINER_NAME} --restart=always -d -p 8888:8443 ${IMAGE_NAME}
+sudo docker run --name ${CONTAINER_NAME} --restart=always -d -p 10.0.0.1:8888:8080 -p 8889:9990 ${IMAGE_NAME}
