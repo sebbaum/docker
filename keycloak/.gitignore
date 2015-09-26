@@ -1,4 +1,5 @@
-*/keycloak-server.json
-*/standalone.xml
 */themes
-*.jks
+*.jar
+
+Dockerfile
+*.cli
