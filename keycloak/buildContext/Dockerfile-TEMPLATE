@@ -13,6 +13,6 @@ RUN chown jboss:jboss /opt/jboss/keycloak -R
 RUN chmod +x /opt/jboss/keycloak/config.sh
 
 USER jboss
-RUN /opt/jboss/wildfly/bin/add-user.sh [WILDFLY_USER] [WILDFLY_PASSWD] --silent
+RUN /opt/jboss//keycloak/bin/add-user.sh [WILDFLY_USER] [WILDFLY_PASSWD] --silent
 
 CMD ["/opt/jboss/keycloak/bin/standalone.sh", "-b", "0.0.0.0"]
