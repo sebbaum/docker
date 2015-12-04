@@ -4,14 +4,6 @@ FROM jboss/keycloak
 ADD keycloak-server.json /opt/jboss/keycloak/standalone/configuration/
 ADD standalone.xml /opt/jboss/keycloak/standalone/configuration/
 
-#USER root
-#ADD mysql-connector-java-5.1.36-bin.jar /opt/jboss/keycloak/standalone/lib/
-#ADD load-modules.cli /opt/jboss/keycloak/
-#ADD config.sh /opt/jboss/keycloak/
-
-#RUN chown jboss:jboss /opt/jboss/keycloak -R
-#RUN chmod +x /opt/jboss/keycloak/config.sh
-
 USER jboss
 RUN /opt/jboss/keycloak/bin/add-user.sh [WILDFLY_USER] [WILDFLY_PASSWD] --silent
 
