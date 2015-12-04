@@ -8,33 +8,22 @@
     },
 
     "eventsStore": {
-        "provider": "jpa",
-        "jpa": {
+        "provider": "mongo",
+        "mongo": {
             "exclude-events": [ "REFRESH_TOKEN" ]
         }
     },
 
     "realm": {
-        "provider": "jpa"
+        "provider": "mongo"
     },
 
     "user": {
-        "provider": "jpa"
-    },
-    
-    "userSessions": {
-        "provider" : "mem"
+        "provider": "mongo"
     },
 
-    "realmCache": {
-        "provider": "mem"
-    },
-
-    "userCache": {
-        "provider": "mem",
-        "mem": {
-            "maxSize": 20000
-        }
+    "userSessionPersister": {
+        "provider": "mongo"
     },
 
     "timer": {
@@ -61,16 +50,18 @@
         }
     },
 
-    "connectionsJpa": {
+    "connectionsMongo": {
         "default": {
-            "dataSource": "java:jboss/datasources/KeycloakMysqlDS",
-            "databaseSchema": "update"
+            "uri": "mongodb://[USER]:[PASSWORD]!@10.0.0.1/keycloak",
+            "db": "keycloak",
+            "port": "27017",
+            "connectionsPerHost": 100
         }
     },
 
     "connectionsInfinispan": {
         "default" : {
-            "cacheContainer" : "java:jboss/infinispan/Keycloak"
+            "cacheContainer" : "java:comp/env/infinispan/Keycloak"
         }
     }
 }
